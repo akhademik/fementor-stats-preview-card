@@ -117,12 +117,13 @@ li:last-child::after {
 @media (min-width: 900px) {
   .wrapper {
     margin: 6rem;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
   .header {
     border-top-left-radius: 0;
     border-bottom-right-radius: var(--sz-border-radius);
     width: calc(100vw - 50%);
+    order: 1;
   }
   .content {
     text-align: left;
