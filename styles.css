@@ -37,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   margin: 1rem;
   border: 1px solid transparent;
   border-radius: var(--sz-border-radius);
@@ -57,6 +57,7 @@ body {
   height: 100%;
   mix-blend-mode: multiply;
   opacity: 0.8;
+  object-fit: cover;
 }
 .content {
   padding: 0 2rem;
@@ -115,8 +116,37 @@ li:last-child::after {
 
 /* START DESKTOP RESPONSIVE */
 /* If device screen bigger than 500px will switch the design  */
-@media (min-width: 650px) {
+@media (min-width: 900px) {
   .wrapper {
+    margin: 6rem;
     flex-direction: row-reverse;
+  }
+  .header {
+    border-top-left-radius: 0;
+    border-bottom-right-radius: var(--sz-border-radius);
+    width: calc(100vw - 50%);
+  }
+  .content {
+    text-align: left;
+    padding: 2rem 3rem;
+    width: calc(100vw - 50%);
+  }
+  .text__header {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
+  .text__content {
+    padding-right: 1rem;
+    padding-bottom: 3rem;
+  }
+  .stats_ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .stats_ul li:last-child {
+    padding-right: 2rem;
+  }
+  .stats_ul li::after {
+    position: relative;
   }
 }
