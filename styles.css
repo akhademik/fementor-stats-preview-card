@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  /* Primary Colors  */
+  --clr-very-dark-blue: hsl(233, 47%, 7%);
+  --clr-dark-desaturated-blue: hsl(244, 38%, 16%);
+  --clr-soft-violet: hsl(277, 64%, 61%);
+
+  /* Neutral */
+  --clr-white-mainheading: hsl(0, 0%, 100%);
+  --clr-slightly-trans-white-paragraph: hsla(0, 0%, 100%, 0.75);
+  --clr-slightly-trans-white-headings: hsla(0, 0%, 100%, 0.6);
+
+  /* FONT  */
+  --ft-inter: "Inter", sans-serif; /*400,700*/
+  --ft-lexend: "Lexend Deca", sans-serif; /*400*/
+
+  /* SIZE */
+  --sz-border-radius: 0.7rem;
+}
+
+body {
+  margin: 0;
+  font-size: 15px;
+  font-family: var(--ft-inter);
+  color: var(--clr-white-mainheading);
+  background-color: var(--clr-very-dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--sz-border-radius);
+  background-color: var(--clr-dark-desaturated-blue);
+}
+.header {
+  position: relative;
+  background-color: var(--clr-soft-violet);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.header__img {
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+.content {
+  padding: 0 2rem;
+  text-align: center;
+}
+.text__header {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.text__header strong {
+  color: var(--clr-soft-violet);
+}
+.text__content {
+  color: var(--clr-slightly-trans-white-headings);
+  font-family: var(--ft-inter);
+  line-height: 1.5rem;
+}
+.stats_ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.stats_ul li {
+  margin: 0;
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.stats_ul li::after {
+  color: var(--clr-slightly-trans-white-headings);
+  font-family: var(--ft-lexend);
+  margin-top: 0.5rem;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 400;
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+li:first-child::after {
+  content: "COMPANIES";
+}
+li:nth-child(2)::after {
+  content: "TEMPLATES";
+}
+li:last-child::after {
+  content: "QUERIES";
+}
+
+/* START DESKTOP RESPONSIVE */
+/* If device screen bigger than 500px will switch the design  */
+@media (min-width: 650px) {
+  .wrapper {
+    flex-direction: row-reverse;
+  }
+}
